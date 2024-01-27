@@ -36,7 +36,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%;
+  max-width: 588px;
   margin: 56px auto 0px auto;
   /* a descricao acima é a mesma coisa que isso tudo abaixo
   margin-top: 56px;
