@@ -17,12 +17,15 @@ function toggleMode() {
     //img.setAttribute("src", "./assets/barkon-light.png")
     img.setAttribute(
       "alt",
-      "Foto da Marca Barkon, onde há a imagem de um cachorro com uma guia na cor laranja"
+      "Foto da Marca Barkon, onde há a imagem de um cachorro com uma guia na cor laranja com borda preta"
     )
   } else {
     // se tiver sem light mode, manter a imagem normal
     img.setAttribute("src", "./assets/barkon-dark-final.png")
-    img.setAttribute("alt", "Teste")
+    img.setAttribute(
+      "alt",
+      "Foto da Marca Barkon, onde há a imagem de um cachorro com uma guia na cor laranja com borda branca"
+    )
     //img.setAttribute("src", "./assets/barkon-dark2.png")
   }
 }
