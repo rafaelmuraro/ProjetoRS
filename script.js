@@ -13,7 +13,7 @@ function toggleMode() {
   // substituir a imagem
   if (html.classList.contains("light")) {
     // se tiver light mode, adicionar a imagem light
-    img.setAttribute("src", "./assets/barkon-light.png")
+    img.setAttribute("src", "./assets/barkon-light-final.png")
     //img.setAttribute("src", "./assets/barkon-light.png")
     img.setAttribute(
       "alt",
@@ -21,7 +21,7 @@ function toggleMode() {
     )
   } else {
     // se tiver sem light mode, manter a imagem normal
-    img.setAttribute("src", "./assets/barkon-dark.png")
+    img.setAttribute("src", "./assets/barkon-dark-final.png")
     img.setAttribute("alt", "Teste")
     //img.setAttribute("src", "./assets/barkon-dark2.png")
   }
