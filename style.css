@@ -91,13 +91,22 @@ body * {
   top: 50%; /*puxo 50% pra cima em relação à borda e depois movimento 50% em relação ao topo*/
   left: 0;
   z-index: 1;
+
+  animation: slide-back 0.2s; /* não preciso colocar o frowards porque a posição final do switch button já é left 0 */
   }
 
   /*Troca do botão pra quando estiver no light mode*/
   .light #switch button {
+/* vou tirar esses dois abaixo porque coloquei a animation lá embaixo
 right: 0;
 left: initial;
+*/
+animation: slide-in 0.2s forwards; /* se eu não colocar o forwards, ele vai voltar pra posição inicial, pois é o que o animation faz*/
 
+  }
+
+  #switch button:hover {
+    outline: 8px solid var(--highlight-color)
   }
 
   #switch span{
@@ -194,4 +203,24 @@ footer {
   .light {
     --bg-url: url(./assets/bg-light.jpg);
   }
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-back {
+from {
+  left: 50%;
+}
+to {
+  left: 0;
+}
+
 }
