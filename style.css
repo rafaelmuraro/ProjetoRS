@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Criação do Modo Light */
+:root {
+  --text-color: white; /* Estou criando uma variável de nome "text-color" e toda vez que usá-la no meu código, vai aplicar a cor branca */
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover:  rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg)
+  }
+
+.light {
+   --text-color: black;
+   --bg-url: url(./assets/bg-mobile-light.jpg);
+   --stroke-color: rgba(0, 0, 0, 0.5);
+   --surface-color: rgba(0, 0, 0, 0.05);
+   --surface-color-hover: rgba(0, 0, 0, 0.20);
+   --highlight-color: rgba(0, 0, 0, 0.1);
+   --switch-bg-url: url(./assets/sun.svg)
+  }
+
+body {
+  /* background: color image repeat position/size */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  margin: 56px auto 0px auto;
+  /* a descricao acima é a mesma coisa que isso tudo abaixo
+  margin-top: 56px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+  */
+
+  padding: 0 24px;
+}
+
+/* Profile */
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 120px;
+  /*border-radius: 0.4dvb;*/
+  border-radius: 50%; /*para imagem circular*/
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* Switch */
+#switch {
+  position: relative; /* vai relativizar o absoluto lá de baixo, colando limites na largura do retangulo do border ou area do border; qualquer botao ali dentro dele fiquei ali certinho */
+  height: 24px;
+  width: 64px;
+
+  margin: 4px auto; /*para centralizar o botão ao centro ordem ali: margem em cima e dos lados*/
+  /*acima é o alinhamento de diplay block, que é utilizado no witch*/
+  }
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  transform: translateY(-50%); /*Transform eu vou utilizar pra trabalhar de várias formas o meu elemento: rodar, transacionar, etc...*/
+  top: 50%; /*puxo 50% pra cima em relação à borda e depois movimento 50% em relação ao topo*/
+  left: 0;
+  z-index: 1;
+  }
+
+  /*Troca do botão pra quando estiver no light mode*/
+  .light #switch button {
+right: 0;
+left: initial;
+
+  }
+
+  #switch span{
+display: block; /* elementos, ao contrário do inline, ficam um abaixo do outro */
+width: 64px;
+height: 24px;
+background: var(--surface-color);
+border-radius: 9999px;
+border: 1px solid var(--stroke-color);
+-webkit-backdrop-filter: blur(4px); /* Tenho que colocar o "webkit-" na frente do backdrop-filter */
+}
+
+/* links */
+ul {
+  list-style: none; /* tira os pontinhos */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0px;
+
+  /* Para fins ilustrativos para pegar o padrão do ul, caso eu não fosse fazer direto no ul il. No a não faz sentido
+display: flex;
+flex-direction: column;
+gap: 8px; */
+}
+
+ul li a {
+  /*border: 1px solid red;*/
+
+  display: flex;
+  justify-content: center; /*serve para alinhar o texto em relacao ao eixo x*/
+  align-items: center; /*serve para alinhar o texto em relacao ao eixo y*/
+  /* margin: 8px 0px; distancia entre um bloco e outro */
+  padding: 16px 24px; /* distancia do texto dentro dos blocos*/
+  background: var(--surface-color);
+  ); /* rgba =red green blue alfa 0 eh o mais escuro; 255 eh o mais forte; alfa eh a transparencia; tudo 255 e o branco*/
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(
+    4px
+  ); /* Coloca um embacado no meu elemento; blur=embacado*/
+  text-decoration: none; /*tirar o sublinhado do texto; posso colocar a linha com o underline ou upperline*/
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+/* pseudo-selector*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  /* rgba =red green blue alfa 0 eh o mais escuro; 255 eh o mais forte; alfa eh a transparencia; tudo 255 e o branco*/
+  border: 1, 5px solid var(--text-color);
+}
+
+/*social-links */
+#social-links {
+  display: flex; /*para habilitar o gap de 16px entre os ícones */
+
+  padding: 24px 0px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px; /* mudandando o font-size de todos os elementos dentro do social links */
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  transition: background 0.2s;
+  border-radius: 50%; /* 50% é uma bolinha perfeita */
+}
+
+#social-links a:hover {
+  /* Quando eu passar o mouse em cima o que vai acontecer = significado do hover */
+  background: var(--highlight-color);
+  padding: 16px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0px;
+  font-size: 14px;
+}
